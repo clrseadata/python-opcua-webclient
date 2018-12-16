@@ -1,15 +1,13 @@
 # -*- coding: UTF-8 -*
 '''
-Created on 2017年4月21日
-
-@author: RobinTang
-'''
-
-# -*- coding: UTF-8 -*
-'''
 Created on 2017年4月1日
 
 @author: RobinTang
+
+Corrected to be Python 3 compatible
+Date: 2018 12 16
+@author: clrseadata
+
 '''
 from info import __version__
 import os, json
@@ -203,8 +201,8 @@ def config(argv):
     opts, args = getopt.getopt(argv, "bh")
     for opt, arg in opts:
         if opt == '-h':
-            print 'Usage: python -m opcuawebclient [bindaddress:port | port]'
-            print 'Report bugs to <sintrb@gmail.com>'
+            print ('Usage: python -m opcuawebclient [bindaddress:port | port]')
+            print ('Report bugs to <sintrb@gmail.com>')
             exit()
         if opt == '-b':
             options['webbrowser'] = True
@@ -235,7 +233,7 @@ def runserver():
 def main():
     import sys
     config(sys.argv[1:])
-    print 'Listent at %s:%s' % (options['bind'], options['port'])
+    print ('Listent at %s:%s' % (options['bind'], options['port']))
     if options['webbrowser']:
         import webbrowser
         webbrowser.open_new('http://127.0.0.1:%s/' % options['port'])
